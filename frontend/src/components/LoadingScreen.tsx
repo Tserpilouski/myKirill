@@ -10,7 +10,7 @@ const LoadingScreen: FC = () => {
     };
   }, []);
 
-  return <div>Whait...</div>;
+  return <div>Obojdite...</div>;
 };
 
 export default LoadingScreen;
