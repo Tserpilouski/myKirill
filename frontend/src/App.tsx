@@ -1,29 +1,33 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import "./style/app.scss";
 
 function App() {
   return (
     <>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to={"account"}>Account</Link>
-            </li>
-            <li>
-              <Link to={"home"}>Home</Link>
-            </li>
-            <li>
-              <Link to={"today"}>Today</Link>
-            </li>
-            <li>
-              <Link to={"my-riceps"}>My riceps</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div>
+      <Navbar className="bg-body-tertiary">
+        <Container>
+          <NavLink className="custom-link" to="/account">
+            Account
+          </NavLink>
+          <NavLink className="custom-link" to="/home">
+            Home
+          </NavLink>
+          <NavLink className="custom-link" to="/today">
+            Today
+          </NavLink>
+          <NavLink className="custom-link" to="/riceps">
+            Riceps
+          </NavLink>
+          <Navbar.Collapse className="justify-content-end">
+            <Navbar.Text>Signed in as: Mark</Navbar.Text>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Container>
         <Outlet />
-      </div>
+      </Container>
     </>
   );
 }

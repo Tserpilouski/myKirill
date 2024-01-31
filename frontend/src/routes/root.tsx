@@ -3,7 +3,7 @@ import App from "../App";
 import Account from "../pages/Account";
 import Home from "../pages/Home";
 import Today from "../pages/Today";
-import MyRiceps from "../pages/MyRiceps";
+import MyRiceps from "../pages/Riceps";
 import ErrorPage from "../pages/ErrorPage";
 
 export const router = createBrowserRouter([
@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
         element: <Today />,
       },
       {
-        path: "my-riceps",
+        path: "riceps",
         element: <MyRiceps />,
       },
     ],
