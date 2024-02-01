@@ -25,9 +25,7 @@ function App() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Container>
-        <Outlet />
-      </Container>
+      <Outlet />
     </>
   );
 }
