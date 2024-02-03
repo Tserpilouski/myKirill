@@ -3,6 +3,6 @@ import { searchProductApi } from '../controllers/productController.js';
 
 const router = express.Router();
 
-router.route('/').get(searchProductApi);
+router.route('/:query').get(searchProductApi);
 
 export default router;
