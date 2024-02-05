@@ -14,3 +14,9 @@
 .list-group-item {
   border-bottom: none;
 }
+
+.header_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
