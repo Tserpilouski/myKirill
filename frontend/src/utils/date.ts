@@ -1,7 +1,7 @@
 export function formatDate(date: Date): string {
   const options: Intl.DateTimeFormatOptions = {
-    day: "2-digit",
     month: "2-digit",
+    day: "2-digit",
     weekday: "long",
   };
 
