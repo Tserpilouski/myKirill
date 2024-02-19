@@ -3,21 +3,23 @@ import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import CardSection from "./CardSection";
 import Accordion from "react-bootstrap/Accordion";
-import { formatDate } from "../../utils/date";
 import Button from "react-bootstrap/Button";
 import AddExtraMeal from "../modals/AddExtraMeal";
 
-const TodayCard: React.FC = () => {
-  const mealTimes: string[] = ["Breakfast", "Lunch", "Diner"];
-  const dateFormat = formatDate(new Date());
-  const [modalShow, setModalShow] = useState(false);
+interface TodayCardProps {
+  currentDay: string;
+  activeKey?: string[];
+}
 
+const TodayCard: React.FC<TodayCardProps> = ({ currentDay, activeKey }) => {
+  const mealTimes: string[] = ["Breakfast", "Lunch", "Diner"];
+  const [modalShow, setModalShow] = useState(false);
   return (
     <>
-      <Accordion alwaysOpen defaultActiveKey={["0", "1", "2"]}>
+      <Accordion alwaysOpen defaultActiveKey={activeKey}>
         <Card style={{ width: "22rem" }}>
           <Card.Header className="header_btn">
-            <span>{dateFormat}</span>
+            <span>{currentDay}</span>
             <Button variant="success" onClick={() => setModalShow(true)}>
               +
             </Button>

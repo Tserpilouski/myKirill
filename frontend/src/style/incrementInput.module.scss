@@ -1,0 +1,10 @@
+.incrementInput {
+  width: 4rem;
+  margin: 1rem;
+  padding: 0.3rem;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

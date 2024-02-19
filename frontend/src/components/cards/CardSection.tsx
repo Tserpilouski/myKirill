@@ -47,8 +47,8 @@ const CardSection: React.FC<CardSectionProps> = ({ meal, indexMeal }) => {
     );
   }
 
-  const addItem = () => {
-    const newItem = initialItem[0];
+  const addItem = (itemName: string) => {
+    const newItem = { name: itemName, amount: "100 мл", calories: "203 cal" };
     const newItems = [...items, newItem];
     setItems(newItems);
   };
@@ -82,7 +82,7 @@ const CardSection: React.FC<CardSectionProps> = ({ meal, indexMeal }) => {
       <NewMealEntry
         show={modalShow}
         onHide={() => setModalShow(false)}
-        addItem={() => addItem()}
+        addItem={(itemName: string) => addItem(itemName)}
       />
     </>
   );
