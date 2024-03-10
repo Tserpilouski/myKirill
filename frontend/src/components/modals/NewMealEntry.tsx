@@ -14,18 +14,18 @@ interface PropsMealEntry {
 
 const NewMealEntry: React.FC<PropsMealEntry> = ({ show, onHide, addItem }) => {
   const [itemName, setItemName] = useState("");
-  const [inputValue, setInputValue] = useState<number>(0);
+  const [weight, setWeight] = useState<number>(0);
 
-  const handleInputNumberChange = (value: number) => {
-    setInputValue(value);
-    console.log(inputValue);
+  const handleWeightChange = (value: number) => {
+    setWeight(value);
+    console.log(weight);
   };
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleMealName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setItemName(event.target.value);
   };
 
-  const handleAddItem = () => {
+  const addNewMeal = () => {
     addItem(itemName);
     setItemName("");
   };
@@ -48,11 +48,10 @@ const NewMealEntry: React.FC<PropsMealEntry> = ({ show, onHide, addItem }) => {
           type="text"
           placeholder="apple"
           value={itemName}
-          onChange={handleInputChange}
+          onChange={handleMealName}
         />
-        <IncrementInputWithMouseWheel onChange={handleInputNumberChange} />
-        <IncrementInputWithMouseWheel onChange={handleInputNumberChange} />
-        <Button onClick={handleAddItem}>addItem</Button>
+        <IncrementInputWithMouseWheel onChange={handleWeightChange} />
+        <Button onClick={addNewMeal}>addItem</Button>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={onHide}>Add</Button>
