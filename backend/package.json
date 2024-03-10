@@ -8,8 +8,7 @@
 		"start": "nodemon server.js",
 		"data:import": "node seeder",
 		"data:destroy": "node seeder -d",
-		"build": "npm install ",
-		"generate-toc": "markdown-toc -i readme.md"
+		"build": "npm install"
 	},
 	"dependencies": {
 		"color": "^4.2.3",
